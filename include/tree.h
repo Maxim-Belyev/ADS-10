@@ -24,10 +24,10 @@ class Tree {
       if (rootptr == nullptr) {
         root = rootptr = new Node;
       }
-      for (char ch : sequence) {
+      for (char ch : seq) {
         Node* num = new Node(ch);
-        rootptr->child.push_back(num);
-        std::vector<char> updateSequence(seq);
+        rootptr->ch.push_back(num);
+        std::vector<char> updateSeq(seq);
         updateSeq.erase(std::find(updateSeq.begin(), \
                                   updateSeq.end(), ch));
       addElem(num, updateSeq);
