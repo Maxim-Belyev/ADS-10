@@ -27,10 +27,10 @@ class Tree {
       for (char ch : seq) {
         Node* num = new Node(ch);
         rootptr->ch.push_back(num);
-        std::vector<char> updateSequence(seq);
-        uupdateSequence.erase(std::find(updateSequence.begin(), \
-                                  updateSequence.end(), ch));
-      addElem(num, updateSequence);
+        std::vector<char> updateSeq(seq);
+        uupdateSeq.erase(std::find(updateSeq.begin(), \
+                                  updateSeq.end(), ch));
+      addElem(num, updateSeq);
       }
     }
     void readTree(Node* rootptr, std::vector<char> seq) {
