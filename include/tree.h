@@ -32,22 +32,22 @@ class Tree {
             }
         }
     }
+    void readTree(Node* rootptr, std::vector<char> seq) {
+      if (rootptr == nullptr) {
+        root = rootptr = new Node;
+      }
+      if (rootptr != nullptr && rootptr->ch != '\0')
+        seq.push_back(rootptr->ch);
+      if (rootptr->ptr.empty())
+        perm.push_back(seq);
+      for (Node* ch : rootptr->ptr) {
+        readTree(ch, seq);
+      }
+    }
 
  public:
-    void readTree(Node* rootptr, std::vector<char> seq) {
-        if (rootptr == nullptr) {
-            root = rootptr = new Node;
-        }
-        if (rootptr != nullptr && rootptr->ch != '\0')
-            seq.push_back(rootptr->ch);
-        if (rootptr->ptr.empty())
-            perm.push_back(seq);
-        for (Node* ch : rootptr->ptr) {
-            readTree(ch, seq);
-        }
-    }
-    explicit Tree(const std::vector<char>init) : root(nullptr) {
-        createPerm(init);
+    explicit Tree(const std::vector<char>s) : root(nullptr) {
+        createPerm(s);
     }
 
     std::vector<std::vector<char>> getPerm() const {
