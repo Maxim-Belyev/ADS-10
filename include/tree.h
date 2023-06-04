@@ -21,21 +21,19 @@ class Tree {
     }
 
     void addElem(Node* rootptr, const std::vector<char>& seq) {
-        if (rootptr != nullptr) {
-            for (char ch : seq) {
-                Node* num = new Node();
-                rootptr->ptr.push_back(num);
-                std::vector<char> updateSeq(seq);
-                updateSeq.erase(std::find(updateSeq.begin(), \
-                    updateSeq.end(), ch));
-                addElem(num, updateSeq);
-            }
-        }
-    }
-    void readTree(Node* rootptr, std::vector<char> seq) {
       if (rootptr == nullptr) {
         root = rootptr = new Node;
       }
+      for (char ch : sequence) {
+        Node* num = new Node(ch);
+        rootptr->child.push_back(num);
+        std::vector<char> updateSequence(seq);
+        updateSeq.erase(std::find(updateSeq.begin(), \
+                                  updateSeq.end(), ch));
+      addElem(num, updateSeq);
+      }
+    }
+    void readTree(Node* rootptr, std::vector<char> seq) {
       if (rootptr != nullptr && rootptr->ch != '\0')
         seq.push_back(rootptr->ch);
       if (rootptr->ptr.empty())
