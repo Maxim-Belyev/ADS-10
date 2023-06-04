@@ -46,8 +46,8 @@ class Tree {
             readTree(ch, seq);
         }
     }
-    explicit Tree(const std::vector<char>s) : root(nullptr) {
-        createPerm(s);
+    explicit Tree(const std::vector<char>init) : root(nullptr) {
+        createPerm(init);
     }
 
     std::vector<std::vector<char>> getPerm() const {
