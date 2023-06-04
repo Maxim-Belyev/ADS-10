@@ -26,7 +26,7 @@ class Tree {
       }
       for (char ch : seq) {
         Node* num = new Node(ch);
-        rootptr->ch.push_back(num);
+        rootptr->ptr.push_back(num);
         std::vector<char> updateSeq(seq);
         updateSeq.erase(std::find(updateSeq.begin(), \
                                   updateSeq.end(), ch));
